@@ -3,7 +3,7 @@ import React from "react";
 const WinningScreen = () => {
 
 
-    return <div className="winner-square"  >Congrats, you win!</div>
+    return <div className="winner-square"  >Congrats, you won!</div>
 }
 
 

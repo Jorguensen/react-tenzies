@@ -5,6 +5,7 @@ import Die from "./components/Die"
 import { nanoid } from 'nanoid'
 import WinningScreen from './components/WinningScreen';
 import React, {useState, useEffect} from "react";
+import Confetti from "react-confetti"
 
 function App() {
 
@@ -16,7 +17,6 @@ function App() {
     const allEqual = diceNumbers.every(dice => dice.value === diceNumbers[0].value);
     if(allHeld && allEqual){
       setIsWin(true);
-      console.log("winner ------> " + isWin)
     }
 
   }, [diceNumbers])
@@ -73,6 +73,7 @@ function App() {
   return (
     <div className="App">
      <main className="main--board">
+      {isWin && <Confetti/>}
         <h1 className="title">Tenzies</h1>
           <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
       <div className ="dice-container">
